@@ -41,12 +41,12 @@ from spotipy.oauth2 import SpotifyOAuth
 
 
 # OpenWeatherMap API Key (Buraya kendi API key'inizi girin)
-WEATHER_API_KEY = "XXXX"
-NEWS_API_KEY = "XXXX"
-YOUTUBE_API_KEY ="XXXX"
-TMDB_API_KEY = "XXXX"
-SENDER_EMAIL = "XXXX"
-SENDER_PASSWORD = "XXXX"
+WEATHER_API_KEY = "49924fde68537d2eb015c11a4d99bcc0"
+NEWS_API_KEY = "79c30c2a5dd2405691237cc486b2e713"
+YOUTUBE_API_KEY ="AIzaSyBUwzJPhQX5PweT-1-MNCo7dwEIzAMTcsE"
+TMDB_API_KEY = "c3133da98298b5aa77f69d23c0989cf5"
+SENDER_EMAIL = "nilufer5510160@gmail.com"
+SENDER_PASSWORD = "guixxxbjegjcbxfw"
 
 GENRE_MAP = {
     "action": 28,
@@ -85,16 +85,11 @@ with open("label_encoder.pkl", "rb") as encoder_file:
 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "google_tts_credentials.json"
 
-BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-status_path = os.path.join(BASE_DIR, 'status.txt')
 
 def speak(text, lang_code="en-US"):
     print(f"\033[1;34mAssistant replied:\033[0m {text}")
 
     try:
-        with open(status_path, "w") as f:
-            f.write("speaking")
-
         client = texttospeech.TextToSpeechClient()
 
         synthesis_input = texttospeech.SynthesisInput(text=text)
@@ -124,10 +119,6 @@ def speak(text, lang_code="en-US"):
 
     except Exception as e:
         print("TTS Hatası:", e)
-
-    finally:
-        with open(status_path, "w") as f:
-            f.write("idle")
     
 def command():
     r = sr.Recognizer()
@@ -1172,11 +1163,7 @@ def resume_music(query=None):
     except Exception as e:
         speak("Sorry it is not possible")
 
-def exit_with_signal():
-    with open(EXIT_PATH, 'w') as f:
-        f.write("exit")
-    speak("Shutting down the assistant. Goodbye!")
-    sys.exit()
+
 
 
 TAG_HANDLERS = {
@@ -1206,7 +1193,7 @@ TAG_HANDLERS = {
     "list_events":list_events,
     "delete_event":delete_event,
     "update_event":update_event,
-    "exit": lambda _: exit_with_signal(),
+   "exit": lambda _: sys.exit()
 
     
 }
