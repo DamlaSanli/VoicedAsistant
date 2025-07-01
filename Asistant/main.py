@@ -41,12 +41,12 @@ from spotipy.oauth2 import SpotifyOAuth
 
 
 # OpenWeatherMap API Key (Buraya kendi API key'inizi girin)
-WEATHER_API_KEY = "49924fde68537d2eb015c11a4d99bcc0"
-NEWS_API_KEY = "79c30c2a5dd2405691237cc486b2e713"
-YOUTUBE_API_KEY ="AIzaSyBUwzJPhQX5PweT-1-MNCo7dwEIzAMTcsE"
-TMDB_API_KEY = "c3133da98298b5aa77f69d23c0989cf5"
-SENDER_EMAIL = "nilufer5510160@gmail.com"
-SENDER_PASSWORD = "guixxxbjegjcbxfw"
+WEATHER_API_KEY = "XXX"
+NEWS_API_KEY = "XXX"
+YOUTUBE_API_KEY ="XXX"
+TMDB_API_KEY = "XXX"
+SENDER_EMAIL = "XXX"
+SENDER_PASSWORD = "XXX"
 
 GENRE_MAP = {
     "action": 28,
