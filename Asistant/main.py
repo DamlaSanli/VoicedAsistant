@@ -41,14 +41,13 @@ from spotipy.oauth2 import SpotifyOAuth
 
 
 # OpenWeatherMap API Key (Buraya kendi API key'inizi girin)
-WEATHER_API_KEY = "49924fde68537d2eb015c11a4d99bcc0"
-NEWS_API_KEY = "79c30c2a5dd2405691237cc486b2e713"
-YOUTUBE_API_KEY ="AIzaSyBUwzJPhQX5PweT-1-MNCo7dwEIzAMTcsE"
-TMDB_API_KEY = "c3133da98298b5aa77f69d23c0989cf5"
-SENDER_EMAIL = "nilufer5510160@gmail.com"
-SENDER_PASSWORD = "guixxxbjegjcbxfw"
-BASE_DIR = os.path.abspath(os.path.dirname(__file__))
-EXIT_PATH = os.path.join(BASE_DIR, "exit.txt")
+WEATHER_API_KEY = "XXXX"
+NEWS_API_KEY = "XXXX"
+YOUTUBE_API_KEY ="XXXX"
+TMDB_API_KEY = "XXXX"
+SENDER_EMAIL = "XXXX"
+SENDER_PASSWORD = "XXXX"
+
 GENRE_MAP = {
     "action": 28,
     "adventure": 12,
