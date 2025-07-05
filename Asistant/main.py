@@ -180,7 +180,7 @@ def handle_weather(query):
         return
 
     try:
-        base_url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={WEATHER_API_KEY}&units=metric"
+        base_url = f"xxx"
         response = requests.get(base_url)
         data = response.json()
 
@@ -218,7 +218,7 @@ def handle_news(query):
         speak(f"Sorry, {category} is not a valid category. Showing general news instead.")
         category = "general"
 
-    url = f"https://newsapi.org/v2/top-headlines?country=us&category={category}&apiKey={NEWS_API_KEY}"
+    url = f"xx"
 
     try:
         response = requests.get(url)
@@ -282,7 +282,7 @@ def handle_youtube(query):
 
         # API isteği gönder
         response = requests.get(
-            "https://www.googleapis.com/youtube/v3/search",
+            "xxx",
             params=params
         )
         data = response.json()
@@ -353,12 +353,12 @@ def unmute_volume(_):
 
 def open_app(query):
     apps = {
-        "calculator": 'C:\\Windows\\System32\\calc.exe',
-        "calculate": 'C:\\Windows\\System32\\calc.exe',
-        "paint": 'C:\\Windows\\System32\\mspaint.exe',
-        "visual studio code": 'C:\\Users\\DELL\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe',
-        "notepad": 'C:\\Windows\\System32\\notepad.exe',
-        "code": 'C:\\Users\\DELL\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe',
+        "calculator": 'x',
+        "calculate": 'x',
+        "paint": 'x',
+        "visual studio code": 'x',
+        "notepad": 'x',
+        "code": 'x',
     }
 
     for name, path in apps.items():
@@ -446,7 +446,7 @@ def suggest_movie(query):
         speak("Sorry, I couldn't identify the genre. Try saying action, comedy, horror, etc.")
         return
 
-    url = f"https://api.themoviedb.org/3/discover/movie?api_key={TMDB_API_KEY}&with_genres={genre_id}&sort_by=popularity.desc&page=1"
+    url = f"xx"
     response = requests.get(url)
     data = response.json()
 
@@ -496,7 +496,7 @@ def movie_info(query):
 
     movie_name = command().lower()
 
-    search_url = f"https://api.themoviedb.org/3/search/movie?api_key={TMDB_API_KEY}&query={movie_name}"
+    search_url = f"xx"
     search_response = requests.get(search_url)
     search_data = search_response.json()
 
@@ -613,7 +613,7 @@ def add_event(query=None):
             return
 
         # Google Calendar bağlantısı
-        SCOPES = ['https://www.googleapis.com/auth/calendar']
+        SCOPES = ['xx']
         creds = None
 
         if os.path.exists('token.json'):
@@ -657,7 +657,7 @@ def list_events(query=None):
     try:
         speak("Let me check your upcoming events...")
 
-        SCOPES = ['https://www.googleapis.com/auth/calendar']
+        SCOPES = ['xx']
         creds = None
 
         if os.path.exists('token.json'):
@@ -721,7 +721,7 @@ def delete_event(query=None):
         speak("Which event would you like to delete? You can say the event name or the date.")
         event_query = command()
 
-        SCOPES = ['https://www.googleapis.com/auth/calendar']
+        SCOPES = ['xx']
         creds = None
 
         if os.path.exists('token.json'):
@@ -782,7 +782,7 @@ def update_event(query=None):
         speak("Which event would you like to update? You can say the event name or the date.")
         event_query = command()
 
-        SCOPES = ['https://www.googleapis.com/auth/calendar']
+        SCOPES = ['xx']
         creds = None
 
         if os.path.exists('token.json'):
